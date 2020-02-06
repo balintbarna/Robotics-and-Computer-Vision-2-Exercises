@@ -7,8 +7,8 @@ imPath2 = "target/separated.png"
 flamingo = cv2.imread(imPath)
 flamHSV = cv2.cvtColor(flamingo, cv2.COLOR_BGR2HSV)
 
-lower = np.array([20,0,0])
-upper = np.array([40,255,255])
+lower = np.array([20,50,50])
+upper = np.array([30,100,100])
 
 # Threshold the HSV image to get only blue colors
 mask = cv2.inRange(flamHSV, lower, upper)
