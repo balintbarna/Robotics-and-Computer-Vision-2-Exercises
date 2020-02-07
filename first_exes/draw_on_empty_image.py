@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import matplotlib.pyplot as plt
 
 imPath = "target/myim.png"
 imPath2 = "target/myim2.png"
@@ -19,3 +20,13 @@ for i in range(0, dim[0]):
         imRed[i][j] = image[i][j][2]
 
 cv2.imwrite("target/imRed.png", imRed)
+
+
+img = cv2.imread("hsv.PNG")
+mylist = []
+for pixel in img[500]:
+    mylist.append(pixel[1])
+
+plt.plot(mylist)
+plt.savefig('green_plot.png')
+plt.show()
