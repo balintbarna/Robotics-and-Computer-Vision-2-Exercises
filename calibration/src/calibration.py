@@ -10,8 +10,8 @@ import exifread
 
 def main():
     parser = argparse.ArgumentParser(description='Calibrate camera with multiple images, if no arguments are given, /input and /output in current folder are used')
-    parser.add_argument('-i', '--input', metavar='', type=lambda p: Path(p).absolute(), help='the input directory', default=Path(__file__).absolute().parent / "input")
-    parser.add_argument('-o', '--output', metavar='', type=lambda p: Path(p).absolute(), help='the output directory', default=Path(__file__).absolute().parent / "output")
+    parser.add_argument('-i', '--input', metavar='', type=lambda p: Path(p).absolute(), help='the input directory', default=Path(__file__).absolute().parent.parent / "input")
+    parser.add_argument('-o', '--output', metavar='', type=lambda p: Path(p).absolute(), help='the output directory', default=Path(__file__).absolute().parent.parent / "output")
     parser.add_argument('--min_coverage', metavar='' , type=float, default=25, help='Minimum percentage coverage of the checkerboard in the image for image to be considered')
     parser.add_argument('-f', '--fisheye', dest='fisheye', action='store_true', help='set if camera is fisheye')
     parser.add_argument('-d', '--debug', dest='debug', action='store_true', help='set to debug the program and get intermediate steps')
